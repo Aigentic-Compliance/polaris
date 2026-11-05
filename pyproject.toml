@@ -1,0 +1,8 @@
+[project]
+name = "polaris"
+version = "0.1.0"
+description = "Aigentic Compliance POLARIS -- scraper (WP1), classification cascade (WP2), evaluator (WP6), recommender (WP7)"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

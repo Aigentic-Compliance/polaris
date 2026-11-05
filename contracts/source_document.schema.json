@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "polaris://contracts/source_document.schema.json",
+  "title": "SourceDocument",
+  "description": "One row per candidate file the scraper has seen, accepted or rejected. Persisted regardless of outcome (POLARIS v5.0 SIPOC A2/A3: every candidate must be traceable, not just accepted ones).",
+  "type": "object",
+  "required": ["source_id", "raw_uri", "file_hash", "retrieved_at", "topic_candidate", "document_type", "accepted", "acceptance_reason"],
+  "properties": {
+    "source_id": {"type": "string", "format": "uuid"},
+    "raw_uri": {"type": "string", "description": "Where the immutable original bytes live (local path or object storage URI). Never mutated after write."},
+    "file_hash": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+    "retrieved_at": {"type": "string", "format": "date-time"},
+    "origin_url": {"type": ["string", "null"]},
+    "organisation": {"type": ["string", "null"]},
+    "topic_candidate": {"type": "string", "description": "e.g. GFT. Candidate, not authoritative, until G0 acceptance."},
+    "document_type": {"type": "string", "enum": ["pdf", "html", "docx"]},
+    "robots_allowed": {"type": ["boolean", "null"], "description": "Result of the robots.txt check at retrieval time. Null only if robots.txt could not be fetched."},
+    "accepted": {"type": "boolean"},
+    "acceptance_reason": {"type": "string", "description": "Always populated on accept OR reject. This is the field the BUAS audit found missing (F4/A3) -- a keyword match is not by itself an acceptance reason."},
+    "rejection_reason": {"type": ["string", "null"]},
+    "source_quality_tier": {"type": ["string", "null"], "enum": ["gold", "silver", "bronze", null]},
+    "version_date": {"type": ["string", "null"], "format": "date"},
+    "duplicate_of": {"type": ["string", "null"], "format": "uuid"},
+    "byte_size": {"type": ["integer", "null"]},
+    "language": {"type": ["string", "null"]},
+    "jurisdiction": {"type": ["string", "null"]},
+    "requires_ocr": {"type": ["boolean", "null"], "description": "True if pdf_segmenter.detect_text_extractability flagged this as likely scanned/image-only. Never silently dropped as 'no text' -- see WP1 framework C6.7. No OCR call is made by this repo; a flagged document is registered with accepted=false and this flag set, for routing to a human or a future OCR step (e.g. the 'Document-intelligence / OCR service' row in the ProtoFocus AI Model Architecture document -- not wired up here)."}
+  }
+}

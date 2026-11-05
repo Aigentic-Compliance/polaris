@@ -1,0 +1,17 @@
+[
+  {"text": "Employees must not accept any gift with a value exceeding EUR 50 from a current or prospective supplier.", "true_label": "THR"},
+  {"text": "Gifts and hospitality must be registered in the company's gift register within five business days of receipt.", "true_label": "OPR"},
+  {"text": "This policy applies to all employees, contractors and temporary staff of the organisation.", "true_label": "SCE"},
+  {"text": "A gift means any item, service or benefit of value offered without expectation of direct payment.", "true_label": "DEF"},
+  {"text": "The purpose of this policy is to prevent gifts and hospitality from improperly influencing business decisions.", "true_label": "PUR"},
+  {"text": "Any exception to the EUR 50 threshold requires prior written approval from the Compliance Officer.", "true_label": "OPW"},
+  {"text": "This policy applies in all jurisdictions in which the company operates, subject to stricter local law.", "true_label": "SCG"},
+  {"text": "Failure to comply with this policy may result in disciplinary action up to and including termination.", "true_label": "ENF"},
+  {"text": "The UK Bribery Act 2010 imposes criminal liability on both individuals and organisations for bribery offences.", "true_label": "LAW"},
+  {"text": "All employees must complete anti-bribery training annually as a condition of continued employment.", "true_label": "TRN"},
+  {"text": "Table of Contents", "true_label": "NOL"},
+  {"text": "\u00a9 2026 Example Corp. All rights reserved.", "true_label": "NOL"},
+  {"text": "Consider whether the gift is offered in connection with a pending negotiation -- this is a common red flag.", "true_label": "FLG"},
+  {"text": "Do not accept cash or cash-equivalent gifts under any circumstances, regardless of value.", "true_label": "DND"},
+  {"text": "For example, a branded pen worth EUR 5 received at a trade fair would not require registration.", "true_label": "EXG"}
+]

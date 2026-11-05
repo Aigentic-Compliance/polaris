@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "polaris://contracts/segment.schema.json",
+  "title": "Segment",
+  "description": "One row per classified passage of an accepted SourceDocument. This is the record that carries the LET label -- there is no separate 'labeller' table; classification is a field on this contract, produced by whichever code path (keyword cascade, LLM call, human reviewer) last wrote it.",
+  "type": "object",
+  "required": ["segment_id", "source_id", "text", "label", "confidence", "review_status", "model_id"],
+  "properties": {
+    "segment_id": {"type": "string", "format": "uuid", "description": "Stable across reprocessing. Never regenerated on re-run -- the BUAS audit flagged random UUID regeneration on reprocessing as a provenance defect (WP2 B3 finding)."},
+    "source_id": {"type": "string", "format": "uuid"},
+    "text": {"type": "string"},
+    "page_from": {"type": ["integer", "null"]},
+    "page_to": {"type": ["integer", "null"]},
+    "bbox": {"type": ["array", "null"], "items": {"type": "number"}, "minItems": 4, "maxItems": 4},
+    "section_path": {"type": ["string", "null"]},
+    "label": {
+      "type": "string",
+      "enum": ["NOL", "PUR", "RUL", "THR", "OPA", "OPR", "OPW", "SCG", "SCD", "SCE", "DEF", "LAW", "FAQ", "EXG", "FLG", "DND", "ENF", "TRN"]
+    },
+    "confidence": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+    "review_status": {
+      "type": "string",
+      "enum": ["auto_accepted", "needs_review", "reviewed_corrected", "reviewed_confirmed"]
+    },
+    "model_id": {"type": "string", "description": "Which model/heuristic produced this label, e.g. 'keyword_cascade_v1' or 'azure-gpt-4o'. Mandatory -- v5.0 section 16 requires labeller versioning; the BUAS repo's F10 finding was that no prompt/model version was ever stored."},
+    "prompt_version": {"type": ["string", "null"]},
+    "rationale": {"type": ["string", "null"], "description": "One-line justification from the classifier, kept for reviewer efficiency. Not authoritative."}
+  }
+}

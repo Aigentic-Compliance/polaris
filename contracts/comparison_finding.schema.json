@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "polaris://contracts/comparison_finding.schema.json",
+  "title": "ComparisonFinding",
+  "description": "One row per customer-vs-benchmark comparison result (POLARIS v5.0 section 12.2/12.3, Stage H). Fact and recommendation are kept as separate fields deliberately -- v5.0 explicitly requires separating 'X% of peers do this' from 'consider doing this'.",
+  "type": "object",
+  "required": ["finding_id", "comparison_state", "customer_object_id", "benchmark_concept_id", "fact", "confidence", "materiality"],
+  "properties": {
+    "finding_id": {"type": "string", "format": "uuid"},
+    "comparison_state": {
+      "type": "string",
+      "enum": ["ALIGNED", "STRONGER", "WEAKER", "MISSING", "DIFFERENT", "NOT_COMPARABLE", "EXTRA"]
+    },
+    "customer_object_id": {"type": ["string", "null"], "description": "Null only for MISSING (concept absent from customer pack)."},
+    "benchmark_concept_id": {"type": ["string", "null"], "description": "Null only for EXTRA (concept absent from benchmark comparison set)."},
+    "fact": {"type": "string", "description": "Descriptive, evidence-only statement, e.g. '82% of the selected peer population registers gifts above EUR 25.' Never a recommendation."},
+    "recommendation": {"type": ["string", "null"], "description": "Draft wording only. Never auto-applied. Null when comparison_state is ALIGNED or NOT_COMPARABLE."},
+    "evidence_object_ids": {"type": "array", "items": {"type": "string"}, "description": "Which benchmark-side objects support the fact -- must resolve to real objects."},
+    "confidence": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+    "materiality": {"type": "number", "minimum": 0.0, "maximum": 1.0, "description": "How much this finding matters if acted on -- combines LET criticality and parameter delta magnitude. See recommender/materiality.py."},
+    "review_state": {"type": "string", "enum": ["draft", "reviewed_approved", "reviewed_rejected"], "default": "draft"}
+  }
+}

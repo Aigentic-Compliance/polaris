@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "polaris://contracts/policy_object.schema.json",
+  "title": "PolicyObject",
+  "description": "One atomic, source-resolvable object extracted from a labelled Segment. Used identically for benchmark-side objects and customer-pack-side objects -- the recommender compares two lists of these.",
+  "type": "object",
+  "required": ["object_id", "source_id", "segment_id", "source_ref", "label", "concept_state"],
+  "properties": {
+    "object_id": {"type": "string", "pattern": "^[A-Z]{3}-[A-Z]{2,4}-[0-9]{4,}$", "description": "<LET>-<TOPIC>-<NNNN>, e.g. RUL-GFT-0001."},
+    "source_id": {"type": "string", "format": "uuid"},
+    "segment_id": {"type": "string", "format": "uuid"},
+    "source_ref": {"type": "string", "description": "Human-resolvable pointer back to the exact source location, e.g. 'page 4, clause 3.2'. Never null -- this is the field the whole traceability guarantee rests on."},
+    "label": {
+      "type": "string",
+      "enum": ["NOL", "PUR", "RUL", "THR", "OPA", "OPR", "OPW", "SCG", "SCD", "SCE", "DEF", "LAW", "FAQ", "EXG", "FLG", "DND", "ENF", "TRN"]
+    },
+    "concept_id": {"type": ["string", "null"], "description": "RRL-<TOPIC>-xxxx or DRL-<TOPIC>-xxxx if mapped to a reference concept."},
+    "concept_state": {"type": "string", "enum": ["mapped", "unmapped", "deferred"]},
+    "parameters": {
+      "type": "object",
+      "description": "Organisation/source-specific values: threshold_value, currency, approver, timing_days, etc. Never baked into the concept itself.",
+      "additionalProperties": true
+    },
+    "verification_status": {"type": ["string", "null"], "enum": ["verified", "identified", "unverified", null]},
+    "superseded_by": {"type": ["string", "null"]},
+    "pack_origin": {"type": "string", "enum": ["benchmark", "customer"], "description": "Which side of the comparison this object belongs to. Not part of core Policron schema, added here so one table can serve the comparator."}
+  }
+}

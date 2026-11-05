@@ -1,0 +1,86 @@
+[
+  {
+    "object_id": "THR-CUST-0001",
+    "source_id": "66666666-6666-6666-6666-666666666666",
+    "segment_id": "77777777-7777-7777-7777-777777777777",
+    "source_ref": "customer policy clause 4.1",
+    "label": "THR",
+    "concept_id": "RRL-GFT-0001",
+    "concept_state": "mapped",
+    "parameters": {
+      "threshold_value": 250,
+      "currency": "EUR"
+    },
+    "verification_status": "identified",
+    "pack_origin": "customer"
+  },
+  {
+    "object_id": "DEF-CUST-0002",
+    "source_id": "66666666-6666-6666-6666-666666666666",
+    "segment_id": "88888888-8888-8888-8888-888888888888",
+    "source_ref": "customer policy clause 1.1",
+    "label": "DEF",
+    "concept_id": "DRL-GFT-0001",
+    "concept_state": "mapped",
+    "parameters": {
+      "defines": "Government Official"
+    },
+    "verification_status": "identified",
+    "pack_origin": "customer"
+  },
+  {
+    "object_id": "OPW-CUST-0003",
+    "source_id": "66666666-6666-6666-6666-666666666666",
+    "segment_id": "99999999-9999-9999-9999-999999999999",
+    "source_ref": "customer policy clause 5.2",
+    "label": "OPW",
+    "concept_id": "RRL-GFT-0009",
+    "concept_state": "mapped",
+    "parameters": {
+      "waiver_authority": "regional_director"
+    },
+    "verification_status": "identified",
+    "pack_origin": "customer"
+  },
+  {
+    "object_id": "RUL-CUST-0004",
+    "source_id": "66666666-6666-6666-6666-666666666666",
+    "segment_id": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+    "source_ref": "customer policy clause 6.1",
+    "label": "RUL",
+    "concept_id": null,
+    "concept_state": "deferred",
+    "parameters": {},
+    "verification_status": "unverified",
+    "pack_origin": "customer"
+  },
+  {
+    "object_id": "THR-CUST-0007",
+    "source_id": "66666666-6666-6666-6666-666666666666",
+    "segment_id": "dddddddd-dddd-dddd-dddd-dddddddddddd",
+    "source_ref": "customer policy clause 6.3",
+    "label": "THR",
+    "concept_id": "RRL-GFT-0006",
+    "concept_state": "mapped",
+    "parameters": {
+      "threshold_value": 20,
+      "currency": "EUR"
+    },
+    "verification_status": "identified",
+    "pack_origin": "customer"
+  },
+  {
+    "object_id": "OPA-CUST-0006",
+    "source_id": "66666666-6666-6666-6666-666666666666",
+    "segment_id": "eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee",
+    "source_ref": "customer policy clause 5.5",
+    "label": "OPA",
+    "concept_id": "RRL-GFT-0005",
+    "concept_state": "mapped",
+    "parameters": {
+      "approver_role": "regional_director"
+    },
+    "verification_status": "identified",
+    "pack_origin": "customer"
+  }
+]

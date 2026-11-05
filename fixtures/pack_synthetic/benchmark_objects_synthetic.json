@@ -1,0 +1,88 @@
+[
+  {
+    "object_id": "THR-GFT-0001",
+    "source_id": "11111111-1111-1111-1111-111111111111",
+    "segment_id": "22222222-2222-2222-2222-222222222222",
+    "source_ref": "clause 3.2",
+    "label": "THR",
+    "concept_id": "RRL-GFT-0001",
+    "concept_state": "mapped",
+    "parameters": {
+      "threshold_value": 50,
+      "currency": "EUR"
+    },
+    "verification_status": "verified",
+    "pack_origin": "benchmark"
+  },
+  {
+    "object_id": "OPR-GFT-0002",
+    "source_id": "11111111-1111-1111-1111-111111111111",
+    "segment_id": "33333333-3333-3333-3333-333333333333",
+    "source_ref": "clause 3.4",
+    "label": "OPR",
+    "concept_id": "RRL-GFT-0002",
+    "concept_state": "mapped",
+    "parameters": {
+      "registration_window_days": 5
+    },
+    "verification_status": "verified",
+    "pack_origin": "benchmark"
+  },
+  {
+    "object_id": "DEF-GFT-0003",
+    "source_id": "11111111-1111-1111-1111-111111111111",
+    "segment_id": "44444444-4444-4444-4444-444444444444",
+    "source_ref": "clause 1.1",
+    "label": "DEF",
+    "concept_id": "DRL-GFT-0001",
+    "concept_state": "mapped",
+    "parameters": {
+      "defines": "Government Official"
+    },
+    "verification_status": "verified",
+    "pack_origin": "benchmark"
+  },
+  {
+    "object_id": "OPA-GFT-0004",
+    "source_id": "11111111-1111-1111-1111-111111111111",
+    "segment_id": "55555555-5555-5555-5555-555555555555",
+    "source_ref": "clause 3.6",
+    "label": "OPA",
+    "concept_id": "RRL-GFT-0003",
+    "concept_state": "mapped",
+    "parameters": {
+      "approver_role": "line_manager"
+    },
+    "verification_status": "verified",
+    "pack_origin": "benchmark"
+  },
+  {
+    "object_id": "THR-GFT-0007",
+    "source_id": "11111111-1111-1111-1111-111111111111",
+    "segment_id": "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb",
+    "source_ref": "clause 3.9",
+    "label": "THR",
+    "concept_id": "RRL-GFT-0006",
+    "concept_state": "mapped",
+    "parameters": {
+      "threshold_value": 100,
+      "currency": "EUR"
+    },
+    "verification_status": "verified",
+    "pack_origin": "benchmark"
+  },
+  {
+    "object_id": "OPA-GFT-0006",
+    "source_id": "11111111-1111-1111-1111-111111111111",
+    "segment_id": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+    "source_ref": "clause 3.7",
+    "label": "OPA",
+    "concept_id": "RRL-GFT-0005",
+    "concept_state": "mapped",
+    "parameters": {
+      "approver_role": "line_manager"
+    },
+    "verification_status": "verified",
+    "pack_origin": "benchmark"
+  }
+]

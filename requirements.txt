@@ -1,0 +1,16 @@
+pydantic>=2.5
+sqlalchemy>=2.0
+requests>=2.31
+pymupdf>=1.24
+scikit-learn>=1.3
+tenacity>=8.2
+python-dotenv>=1.0
+openai>=1.30
+jsonschema>=4.20
+pytest>=7.4
+matplotlib>=3.8
+beautifulsoup4>=4.12
+flask>=3.0
+playwright>=1.56
+python-docx>=1.1
+w3lib>=2.1

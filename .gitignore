@@ -11,3 +11,5 @@ __pycache__/
 .env
 charts/
 *.egg-info/
+.coverage
+.env.example
