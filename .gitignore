@@ -1,0 +1,13 @@
+# Never commit real documents -- see local_documents/README.md and C3.8
+# in the WP1 framework ("originals never redistributed").
+local_documents/*
+!local_documents/README.md
+
+# Local dev artefacts
+*.db
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+charts/
+*.egg-info/
